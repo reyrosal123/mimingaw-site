@@ -4,35 +4,153 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Privacy Policy - Mimingaw</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-  body { font-family: -apple-system, Segoe UI, Roboto, sans-serif; max-width: 640px; margin: 60px auto; padding: 0 20px; line-height: 1.6; color: #222; }
-  h1 { margin-bottom: 0.2em; }
-  a { color: #fe2c55; }
-  footer { margin-top: 60px; font-size: 0.85em; color: #888; }
+  :root {
+    --pink: #fe2c55;
+    --cyan: #25f4ee;
+    --bg: #0b0b0f;
+    --bg-2: #131319;
+    --text: #f2f2f5;
+    --text-dim: #9a9aa5;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    font-family: 'Inter', -apple-system, Segoe UI, Roboto, sans-serif;
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 70px 24px 60px;
+    line-height: 1.7;
+    color: var(--text);
+    background: var(--bg);
+    position: relative;
+  }
+
+  /* soft glow accent, subtle — not distracting on a legal page */
+  .blob {
+    position: fixed;
+    width: 320px; height: 320px;
+    border-radius: 50%;
+    background: var(--pink);
+    filter: blur(120px);
+    opacity: 0.14;
+    top: -160px; right: -140px;
+    z-index: 0;
+    pointer-events: none;
+  }
+
+  main { position: relative; z-index: 1; }
+
+  .eyebrow {
+    display: inline-block;
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--pink);
+    margin-bottom: 10px;
+  }
+
+  h1 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: clamp(2rem, 6vw, 2.6rem);
+    margin: 0 0 6px;
+    background: linear-gradient(100deg, var(--pink), var(--cyan));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .updated {
+    color: var(--text-dim);
+    font-size: 0.9rem;
+    margin: 0 0 34px;
+  }
+
+  h3 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.05rem;
+    color: var(--text);
+    margin: 30px 0 8px;
+    padding-left: 14px;
+    border-left: 3px solid var(--pink);
+  }
+
+  p {
+    color: #cfcfd6;
+    font-size: 0.97rem;
+    margin: 0 0 4px;
+  }
+
+  a {
+    color: var(--cyan);
+    text-decoration: none;
+    font-weight: 500;
+    transition: opacity 0.2s;
+  }
+  a:hover { opacity: 0.75; }
+
+  .back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 46px;
+    padding: 10px 18px;
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 999px;
+    font-size: 0.9rem;
+    transition: border-color 0.2s, transform 0.2s;
+  }
+  .back-link:hover {
+    border-color: var(--cyan);
+    opacity: 1;
+    transform: translateX(-2px);
+  }
+
+  footer {
+    margin-top: 60px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255,255,255,0.06);
+    font-size: 0.82rem;
+    color: #55555f;
+  }
 </style>
 </head>
 <body>
-  <h1>Privacy Policy</h1>
-  <p><em>Last updated: July 2026</em></p>
 
-  <p>Mimingaw is a personal automation tool operated by a single individual for personal use on their own TikTok account.</p>
+  <div class="blob" aria-hidden="true"></div>
 
-  <h3>Data we access</h3>
-  <p>Mimingaw uses TikTok's Content Posting API, authorized via OAuth by the account owner, solely to upload video content to that same account. It does not access followers, messages, analytics, or any data belonging to other TikTok users.</p>
+  <main>
+    <span class="eyebrow">Legal</span>
+    <h1>Privacy Policy</h1>
+    <p class="updated"><em>Last updated: July 2026</em></p>
 
-  <h3>Data we store</h3>
-  <p>Mimingaw stores only: (1) an OAuth access token and refresh token used to authenticate API requests, and (2) a list of previously-uploaded video identifiers, used to avoid duplicate uploads. No personal data about any third party is collected or stored.</p>
+    <p>Mimingaw is a personal automation tool operated by a single individual for personal use on their own TikTok account.</p>
 
-  <h3>Data sharing</h3>
-  <p>No data collected or accessed by Mimingaw is sold, shared, or disclosed to any third party.</p>
+    <h3>Data we access</h3>
+    <p>Mimingaw uses TikTok's Content Posting API, authorized via OAuth by the account owner, solely to upload video content to that same account. It does not access followers, messages, analytics, or any data belonging to other TikTok users.</p>
 
-  <h3>Data retention</h3>
-  <p>Stored tokens and identifiers are retained only for as long as the tool remains in active use, and are deleted if the tool is decommissioned.</p>
+    <h3>Data we store</h3>
+    <p>Mimingaw stores only: (1) an OAuth access token and refresh token used to authenticate API requests, and (2) a list of previously-uploaded video identifiers, used to avoid duplicate uploads. No personal data about any third party is collected or stored.</p>
 
-  <h3>Contact</h3>
-  <p>For questions about this policy, contact the operator directly via TikTok.</p>
+    <h3>Data sharing</h3>
+    <p>No data collected or accessed by Mimingaw is sold, shared, or disclosed to any third party.</p>
 
-  <p><a href="index.html">&larr; Back home</a></p>
+    <h3>Data retention</h3>
+    <p>Stored tokens and identifiers are retained only for as long as the tool remains in active use, and are deleted if the tool is decommissioned.</p>
+
+    <h3>Contact</h3>
+    <p>For questions about this policy, contact the operator directly via TikTok.</p>
+
+    <a href="index.html" class="back-link">&larr; Back home</a>
+  </main>
+
   <footer>&copy; 2026 Mimingaw</footer>
+
 </body>
 </html>
